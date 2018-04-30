@@ -28,6 +28,27 @@
     margin-bottom: 1em;
 }
 
+div.details {
+    margin-top: 2em;
+}
+
+#content .single-product .author-image {
+    margin-left: 1em;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 30px;
+}
+
+.description > a {
+    cursor: pointer;
+    color: #4183C4;
+    text-decoration: none;
+}
+
+div.extra {
+    color: rgb(141, 138, 138);
+}
+
 i.icon {
     margin: 0;
 }
