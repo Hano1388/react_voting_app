@@ -1,18 +1,21 @@
 
 class ProductList extends React.Component {
     render() {
-        const product = Seed.products[0];
+        const productComponents = Seed.products.map(product => (
+            <Product
+                key={'product-' + product.id}
+                title={product.title}
+                description={product.description}
+                url={product.url}
+                votes={product.votes}
+                submitterAvatarUrl={product.submitterAvatarUrl}
+                productImageUrl={product.productImageUrl}
+            />
+        ));
+
         return (
-            <div className='single-product'>
-                <Product 
-                    id={product.id}
-                    title={product.title}
-                    description={product.description}
-                    url={product.url}
-                    votes={product.votes}
-                    submitterAvatarUrl={product.submitterAvatarUrl}
-                    productImageUrl={product.productImageUrl}
-                />
+            <div className='product-list'>
+                {productComponents}
             </div>
         );
     }
@@ -21,12 +24,12 @@ class ProductList extends React.Component {
 class Product extends React.Component {
     render() {
         return (
-            <div className='row'>
-                <div className='col-lg-4'>
+            <div className='row single-product'>
+                <div className='col-lg-4 col-md-4 col-sm-12 col-xs-0'>
                     <img className='img-fluid product-image' 
                     src={this.props.productImageUrl} />
                 </div>
-                <div className='col-lg-8 details'>
+                <div className='col-lg-8 col-md-8 col-sm-10 col-xs-12 details'>
                     <div className='row'>
                         <a href='#'>
                             <i className="fas fa-caret-up" />

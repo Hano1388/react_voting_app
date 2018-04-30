@@ -22,17 +22,17 @@
     margin-bottom: 4em;
 }
 
-#content .single-product {
+#content .product-list {
     /* each product within product content */
-    margin-top: 1em;
+    margin-top: -2em;
     margin-bottom: 1em;
 }
 
-div.details {
-    /* margin-top: 1em; */
+#content .product-list .single-product {
+    margin-top: 1em;
 }
 
-#content .single-product .author-image {
+#content .product-list .single-product .author-image {
     margin-left: 1em;
     max-width: 30px;
     max-height: 30px;
