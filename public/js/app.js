@@ -1,9 +1,18 @@
 
 class ProductList extends React.Component {
     render() {
+        const product = Seed.products[0];
         return (
             <div className='single-product'>
-                <Product />
+                <Product 
+                    id={product.id}
+                    title={product.title}
+                    description={product.description}
+                    url={product.url}
+                    votes={product.votes}
+                    submitterAvatarUrl={product.submitterAvatarUrl}
+                    productImageUrl={product.productImageUrl}
+                />
             </div>
         );
     }
@@ -15,20 +24,32 @@ class Product extends React.Component {
             <div className='row'>
                 <div className='col-lg-4'>
                     <img className='img-fluid product-image' 
-                    src='images/products/image-aqua.png' />
+                    src={this.props.productImageUrl} />
                 </div>
                 <div className='col-lg-8 details'>
                     <div className='row'>
+                        <a href='#'>
+                            <i className="fas fa-caret-up" />
+                        </a>
+                        <span className='product-votes'>
+                            {this.props.votes}
+                        </span>
+                    </div>
+                    <div className='row'>
                         <div className='description'>
-                            <a href='#'>Fort Knight</a>
-                            <p>Authentic renaissance actors, delivered in just two weeks.</p>
+                            <a href={this.props.url}>
+                                {this.props.title}
+                            </a>
+                            <p>
+                                {this.props.description}
+                            </p>
                         </div>
                     </div>
                     <div className='row extra'>
                         <span>Submitted by:</span>
                         <img
                         className='img-fluid author-image'
-                        src='images/avatars/daniel.jpg'
+                        src={this.props.submitterAvatarUrl}
                         />
                     </div>
                 </div>

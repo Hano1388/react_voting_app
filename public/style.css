@@ -29,7 +29,7 @@
 }
 
 div.details {
-    margin-top: 2em;
+    /* margin-top: 1em; */
 }
 
 #content .single-product .author-image {
@@ -39,10 +39,21 @@ div.details {
     border-radius: 30px;
 }
 
+.product-votes {
+    margin-left: 0.5em;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
 .description > a {
     cursor: pointer;
     color: #4183C4;
     text-decoration: none;
+}
+
+a > .fa-caret-up {
+    font-size: 30px;
+    color: #4183C4;
 }
 
 div.extra {
