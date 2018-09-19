@@ -18,12 +18,13 @@ class ProductList extends React.Component {
         const nextProducts = this.state.products.map(product => {
           if(product.id === productId) {
             return Object.assign({}, product, {
-              votes: product.vote + 1,
+              votes: product.votes + 1,
             });
           } else {
             return product;
           }
         })
+        console.log("nextProducts: ", nextProducts);
         this.setState({ products: nextProducts });
         console.log('let us see the new state: ', this.state);
     }
