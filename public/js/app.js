@@ -58,9 +58,10 @@ class Product extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleVoteUp = this.handleVoteUp.bind(this);
+        // this.handleVoteUp = this.handleVoteUp.bind(this);
     }
-    handleVoteUp() {
+    handleVoteUp = () => {
+      console.log("This: ", this);
         this.props.onVote(this.props.id);
     }
     render() {
