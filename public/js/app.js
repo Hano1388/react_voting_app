@@ -1,18 +1,13 @@
 class ProductList extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      products: [],
-    };
-
-    this.handleProductVoteUp = this.handleProductVoteUp.bind(this);
-  }
+  state = {
+    products: [],
+  };
 
   componentDidMount() {
     this.setState({ products: Seed.products });
   }
-    handleProductVoteUp(productId) {
+    handleProductVoteUp = productId => {
         console.log(productId + ' was voted');
         console.log('this.state inside handleProductVoteUp: ', this.state);
         const nextProducts = this.state.products.map(product => {
@@ -55,11 +50,6 @@ class ProductList extends React.Component {
 }
 
 class Product extends React.Component {
-    constructor(props) {
-        super(props);
-
-        // this.handleVoteUp = this.handleVoteUp.bind(this);
-    }
     handleVoteUp = () => {
       console.log("This: ", this);
         this.props.onVote(this.props.id);
